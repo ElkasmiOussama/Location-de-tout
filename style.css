@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #000;
+    --white: #fff;
+    --gray: #9a9a9a;
+    --glass: rgba(255, 255, 255, 0.08);
+    --border: rgba(255, 255, 255, 0.2);
+}
+
+body {
+    min-height: 100vh;
+    background: var(--black);
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1,h2 {
+    margin-top: 60px;
+    font-size: 3rem;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+}
+
+h2 {
+    margin-top: 30px;
+    font-weight: 400;
+    color: var(--gray);
+}
+
+.container {
+    margin-top: 70px;
+    width: 90%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 35px;
+}
+
+.card {
+    padding: 50px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    color: var(--white);
+
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    transition: 0.4s ease;
+    position: relative;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--white);
+    transition: 0.4s ease;
+    transform: translateX(-50%);
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    background: var(--white);
+    color: var(--black);
+}
+
+.card:hover::after {
+    width: 70%;
+}
+
+ul {
+    margin-top: 50px;
+    width: 320px;
+    list-style: none;
+}
+
+ul li {
+    padding: 18px 22px;
+    margin-bottom: 18px;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    letter-spacing: 1px;
+    transition: 0.35s;
+}
+
+ul li:hover {
+    background: var(--white);
+    color: var(--black);
+    transform: translateX(12px);
+}
+
+a[href="index.html"] {
+    margin-top: 60px;
+    padding: 14px 40px;
+    text-decoration: none;
+    color: var(--white);
+    border: 1px solid var(--white);
+    border-radius: 50px;
+    letter-spacing: 2px;
+    transition: 0.4s;
+}
+
+a[href="index.html"]:hover {
+    background: var(--white);
+    color: var(--black);
+}
